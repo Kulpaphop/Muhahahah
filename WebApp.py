@@ -24,19 +24,30 @@ if weight > 0 and height_cm > 0:
     bmi = weight / ((height_cm / 100) ** 2)
     st.write(f"Your BMI is: {bmi:.2f}")
 
-    category, image_url = (
-        ("Underweight", "underweight.jpg") if bmi < 18.5 else
-        ("Normal weight", "normal.jpg") if bmi < 24.9 else
-        ("Overweight", "overweight.jpg") if bmi < 29.9 else
-        ("Obesity", "obesity.jpg") if bmi < 34.9 else
-        ("Extreme Obesity", "extreme_obesity.jpg")
-    )
-
-    st.error(f"Category: {category}") if bmi >= 30.0 else (
-        st.warning(f"Category: {category}") if bmi < 18.5 else
-        st.success(f"Category: {category}") if bmi < 24.9 else
+    if bmi < 18.5:
+        category = "Underweight"
+        image_url = "underweight.jpg"
+        st.warning(f"Category: {category}")
+    elif bmi < 24.9:
+        category = "Normal weight"
+        image_url = "normal.jpg"
+        st.success(f"Category: {category}")
+    elif bmi < 29.9:
+        category = "Overweight"
+        image_url = "overweight.jpg"
         st.info(f"Category: {category}")
-    )
+    elif bmi < 34.9:
+        category = "Obesity"
+        image_url = "obesity.jpg"
+        st.error(f"Category: {category}")
+    else:
+        category = "Extreme Obesity"
+        image_url = "extreme_obesity.jpg"
+        st.error(f"Category: {category}")
 
     st.image(image_url, caption=f"{bmi:.2f}", width=300)
-    st.info("Stay healthy and keep shining!" if gender == "Female" else "Stay strong and maintain a healthy lifestyle!")
+
+    if gender == "Female":
+        st.info("Stay healthy and keep shining!")
+    else:
+        st.info("Stay strong and maintain a healthy lifestyle!")
