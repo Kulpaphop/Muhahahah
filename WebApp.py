@@ -26,23 +26,23 @@ if weight > 0 and height_cm > 0:
 
     if bmi < 18.5:
         category = "Underweight"
-        image_url = "underweight.jpg"
+        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
         st.warning(f"Category: {category}")
     elif bmi < 24.9:
         category = "Normal weight"
-        image_url = "normal.jpg"
+        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
         st.success(f"Category: {category}")
     elif bmi < 29.9:
         category = "Overweight"
-        image_url = "overweight.jpg"
+        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
         st.info(f"Category: {category}")
     elif bmi < 34.9:
         category = "Obesity"
-        image_url = "obesity.jpg"
+        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
         st.error(f"Category: {category}")
     else:
         category = "Extreme Obesity"
-        image_url = "extreme_obesity.jpg"
+        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
         st.error(f"Category: {category}")
 
     st.image(image_url, caption=f"{bmi:.2f}", width=300)
