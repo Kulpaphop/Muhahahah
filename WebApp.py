@@ -24,11 +24,7 @@ if weight > 0 and height_cm > 0:
     st.write(f"Your BMI is: {bmi:.2f}")
     
     # Display BMI result with a smaller image
-    st.image(
-        "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png",
-        caption=f"{bmi:.2f}",
-        width=300
-    )
+    
     if bmi < 18.5:
         st.warning("Category: Underweight")
     elif 18.5 <= bmi < 24.9:
@@ -39,6 +35,11 @@ if weight > 0 and height_cm > 0:
         st.error("Category: Obesity")
     else:
         st.error("Category: Extreme Obesity")
+        st.image(
+            "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png",
+            caption=f"{bmi:.2f}",
+            width=300
+        )
 
     if gender == "Male":
         st.info("Stay strong and maintain a healthy lifestyle!")
