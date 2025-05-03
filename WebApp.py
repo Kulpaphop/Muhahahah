@@ -26,23 +26,38 @@ if weight > 0 and height_cm > 0:
 
     if bmi < 18.5:
         category = "Underweight"
-        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
+        if gender == "Female":
+            image_url = ""
+        else:
+            image_url = ""
         st.warning(f"Category: {category}")
     elif bmi < 24.9:
         category = "Normal weight"
-        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
+        if gender == "Female":
+            image_url = ""
+        else:
+            image_url = ""
         st.success(f"Category: {category}")
     elif bmi < 29.9:
         category = "Overweight"
-        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
+        if gender == "Female":
+            image_url = ""
+        else:
+            image_url = ""
         st.info(f"Category: {category}")
     elif bmi < 34.9:
         category = "Obesity"
-        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
+        if gender == "Female":
+            image_url = "https://img.freepik.com/premium-vector/red-hair-woman-overweight-icon-cartoon-of-red-hair-woman-overweight-vector-icon-for-web-design-isolated-on-white-background_98402-34733.jpg"
+        else:
+            image_url = ""
         st.error(f"Category: {category}")
     else:
         category = "Extreme Obesity"
-        image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
+        if gender == "Female":
+            image_url = "https://tse3.mm.bing.net/th/id/OIP.3pUGtxzJZ-4pYmlo-VhFmQAAAA?w=358&h=626&rs=1&pid=ImgDetMain"
+        else:
+            image_url = "https://png.pngtree.com/png-clipart/20240314/original/pngtree-sad-fat-cute-man-png-image_14589849.png"
         st.error(f"Category: {category}")
 
     st.image(image_url, caption=f"{bmi:.2f}", width=300)
