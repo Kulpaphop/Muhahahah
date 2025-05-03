@@ -23,8 +23,6 @@ if weight > 0 and height_cm > 0:
 
     st.write(f"Your BMI is: {bmi:.2f}")
     
-    # Display BMI result with a smaller image
-    
     if bmi < 18.5:
         st.warning("Category: Underweight")
     elif 18.5 <= bmi < 24.9:
